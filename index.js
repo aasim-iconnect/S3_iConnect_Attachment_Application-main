@@ -8,18 +8,19 @@ const s3 = new AWS.S3({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 });
 
-const fileName = "document.png";
-const folderName = "141"; //Ticket ID in Freshservice
-const subFolder = "123456"; //Conversation ID in Freshservice
+const fileName = "document.png"; //File Name in Freshservice via API
+const folderName = "141"; //Ticket ID in Freshservice via API
+const subFolder = "123456"; //Conversation ID in Freshservice via API
 // const fileURL =
 //   "http://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
 // const fileURL = "https://www.sample-videos.com/img/Sample-jpg-image-15mb.jpeg";
 const fileURL =
   "https://iconnectsolutionspvtltd.ind-attachments.freshservice.com/data/helpdesk/attachments/production/27007817816/original/Asset2.png?response-content-type=image/png&Expires=1655100770&Signature=F-8unTEP5heFnalJqu9uFeYipEwb6BSTHQEDIwJGCGpru6YBL0a7o0vu-xLG0yBtQBsw~ydhHJdvMr4GdMVmw13yeSd6nmphjmDk5oZVI2BG80BMjhiUE8pD6iQ~466i2r-yWRs8UzOFxAc7Jk9-aqRSp0m1SCTKnk8B2QdfxDedcNsHCwy78DXSWK0NWnucCTAjC2JkNc6XJ2zq~So8i06lSzUym2uzQVimLQJ-xFlFxgABXNWQX0BsJfCAdzoE7u~cuO0LqYCJ943YwKOHWL8DN5hU5u5k-v4u-K54krsrqekeJKAW0QIijW7Tr62~RG1AbosN78LCYgM0GpHXhQ__&Key-Pair-Id=APKAIPHBXWY2KT5RCMPQ";
+// File URL via API
 
 var params = {
-  Bucket: "iconnect-aditya" /* required */,
-  Prefix: folderName, // Can be your folder name
+  Bucket: "iconnect-aditya", //Bucket Name as per S3
+  Prefix: folderName, // Folder name to create in S3 Bucket
 };
 s3.listObjectsV2(params, function (err, data) {
   if (err) console.log(err, err.stack); // an error occurred
