@@ -8,13 +8,14 @@ const s3 = new AWS.S3({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 });
 
-const fileName = "HelloWorld.jpg";
-const folderName = "010352"; //Ticket ID in Freshservice
+const fileName = "document.png";
+const folderName = "141"; //Ticket ID in Freshservice
 const subFolder = "123456"; //Conversation ID in Freshservice
 // const fileURL =
 //   "http://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+// const fileURL = "https://www.sample-videos.com/img/Sample-jpg-image-15mb.jpeg";
 const fileURL =
-  "http://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+  "https://iconnectsolutionspvtltd.ind-attachments.freshservice.com/data/helpdesk/attachments/production/27007817816/original/Asset2.png?response-content-type=image/png&Expires=1655100770&Signature=F-8unTEP5heFnalJqu9uFeYipEwb6BSTHQEDIwJGCGpru6YBL0a7o0vu-xLG0yBtQBsw~ydhHJdvMr4GdMVmw13yeSd6nmphjmDk5oZVI2BG80BMjhiUE8pD6iQ~466i2r-yWRs8UzOFxAc7Jk9-aqRSp0m1SCTKnk8B2QdfxDedcNsHCwy78DXSWK0NWnucCTAjC2JkNc6XJ2zq~So8i06lSzUym2uzQVimLQJ-xFlFxgABXNWQX0BsJfCAdzoE7u~cuO0LqYCJ943YwKOHWL8DN5hU5u5k-v4u-K54krsrqekeJKAW0QIijW7Tr62~RG1AbosN78LCYgM0GpHXhQ__&Key-Pair-Id=APKAIPHBXWY2KT5RCMPQ";
 
 var params = {
   Bucket: "iconnect-aditya" /* required */,
@@ -25,37 +26,24 @@ s3.listObjectsV2(params, function (err, data) {
   else {
     if (data.KeyCount === 1) uploadFile();
     else {
-      console.log("Folder is not present");
+      console.log("Folder is not present, Created New Folder");
       downloadImage();
       console.log("Image is Downloaded");
       setTimeout(() => {
         uploadFile();
-        console.log("Folder is Created on Name", folderName);
+        console.log("Folder is Created on S3 with Name", folderName);
       }, 5000);
     }
   }
 });
 
 const downloadImage = () => {
-  var http = require("http"),
-    Stream = require("stream").Transform,
-    fs = require("fs");
+  const url = fileURL;
 
-  var url = fileURL;
+  const https = require("https");
+  const fs = require("fs");
 
-  http
-    .request(url, function (response) {
-      var data = new Stream();
-
-      response.on("data", function (chunk) {
-        data.push(chunk);
-      });
-
-      response.on("end", function () {
-        fs.writeFileSync(`${fileName}`, data.read());
-      });
-    })
-    .end();
+  https.get(url, (resp) => resp.pipe(fs.createWriteStream(fileName)));
 };
 
 const uploadFile = () => {
@@ -76,20 +64,13 @@ const uploadFile = () => {
     }
     console.log(`File uploaded successfully. ${data.Location}`);
   });
-};
 
-// const uploadFile = () => {
-//   fs.readFile(fileName, (err, data) => {
-//     if (err) throw err;
-//     const params = {
-//       Bucket: "iconnect-aditya", // pass your bucket name
-//       // Key: `${folderName}/${subFolder}/${orignalFilenName}`, // file will be saved as FolderName/filename.img
-//       Key: "image.png2", // file will be saved as FolderName/filename.img
-//       Body: JSON.stringify(data, null, 2),
-//     };
-//     s3.upload(params, function (s3Err, data) {
-//       if (s3Err) throw s3Err;
-//       console.log(`File uploaded successfully at ${data.Location}`);
-//     });
-//   });
-// };
+  const path = fileName;
+  try {
+    fs.unlinkSync(path);
+    console.log("Downloaded File Deleted");
+    //file removed
+  } catch (err) {
+    console.error(err);
+  }
+};
