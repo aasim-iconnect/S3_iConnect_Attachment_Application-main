@@ -9,7 +9,7 @@ const s3 = new AWS.S3({
 });
 
 const fileName = "document.png"; //File Name in Freshservice via API
-const folderName = "141"; //Ticket ID in Freshservice via API
+const folderName = "001"; //Ticket ID in Freshservice via API
 const subFolder = "123456"; //Conversation ID in Freshservice via API
 // const fileURL =
 //   "http://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
@@ -64,12 +64,12 @@ const uploadFile = () => {
       throw err;
     }
     console.log(`File uploaded successfully. ${data.Location}`);
+    console.log("Downloaded File Deleted");
   });
 
   const path = fileName;
   try {
     fs.unlinkSync(path);
-    console.log("Downloaded File Deleted");
     //file removed
   } catch (err) {
     console.error(err);
