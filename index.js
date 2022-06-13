@@ -85,10 +85,18 @@ function name(ticket_id, conversation_id, url, fileName) {
   }, 2000);
 }
 
-const attachmnets = response.conversations[0].attachments;
-const ticket_id = response.conversations[0].ticket_id;
-const conversation_id = response.conversations[0].id;
+const conversations = response.conversations;
 
-attachmnets.forEach((attachmnet) => {
-  name(ticket_id, conversation_id, attachmnet.attachment_url, attachmnet.name);
+conversations.map((conversation) => {
+  const attachmnets = conversation.attachments;
+  const ticket_id = conversation.ticket_id;
+  const conversation_id = conversation.id;
+  attachmnets.forEach((attachmnet) => {
+    name(
+      ticket_id,
+      conversation_id,
+      attachmnet.attachment_url,
+      attachmnet.name
+    );
+  });
 });
