@@ -52,7 +52,7 @@ function name(ticket_id, conversation_id, url, fileName) {
   setTimeout(() => {
     uploadFile(ticket_id, conversation_id, fileName);
     console.log("Folder is Created on S3 with Name");
-  }, 2000);
+  }, 20000);
 }
 
 if (false) {

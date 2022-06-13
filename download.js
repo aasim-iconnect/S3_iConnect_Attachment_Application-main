@@ -6,6 +6,8 @@
 
 // https.get(url, (resp) => resp.pipe(fs.createWriteStream("./test.jpeg")));
 
+var fileName = "Bigfile.png";
+
 const fs = require("fs");
 const request = require("request");
 var download = function (uri, filename, callback) {
@@ -15,9 +17,10 @@ var download = function (uri, filename, callback) {
 };
 
 download(
-  "https://www.sample-videos.com/img/Sample-jpg-image-15mb.jpeg",
-  "google.png",
+  // "https://www.sample-videos.com/img/Sample-jpg-image-15mb.jpeg",
+  "https://www.sample-videos.com/img/Sample-jpg-image-30mb.jpg",
+  fileName,
   function () {
-    console.log("File Download Scuss");
+    console.log("File Download Succesfull");
   }
 );
