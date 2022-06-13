@@ -47,7 +47,7 @@ const downloadImage = () => {
   https.get(url, (resp) => resp.pipe(fs.createWriteStream(fileName)));
 };
 
-const uploadFile = () => {
+const uploadFile = (abc, cde) => {
   // Read content from the file
   const fileContent = fs.readFileSync(fileName);
 
@@ -57,7 +57,7 @@ const uploadFile = () => {
     Key: `${folderName}/${subFolder}/${fileName}`, // File name you want to save as in S3
     Body: fileContent,
   };
-
+  console.log(abc, cde);
   // Uploading files to the bucket
   s3.upload(params, function (err, data) {
     if (err) {
