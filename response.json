@@ -1,0 +1,64 @@
+{
+  "conversations": [
+    {
+      "id": 27010776998,
+      "user_id": 27000620019,
+      "to_emails": ["abc@xyz.com"],
+      "body": "<div style='font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;'>\n<div></div>\n<div>\n<div>Hi Abc,<br><br>Ticket: <a href=\"https://iconnect.adityatawade.com/helpdesk/tickets/292\" rel=\"noreferrer\">https://iconnect.adityatawade.com/helpdesk/tickets/292</a><br>\n</div>\n<br><div><br></div>\n</div>\n</div>",
+      "body_text": "Hi Abc,  Ticket: https://iconnect.adityatawade.com/helpdesk/tickets/292",
+      "ticket_id": 292,
+      "created_at": "2022-06-13T11:26:48Z",
+      "updated_at": "2022-06-13T11:26:48Z",
+      "incoming": false,
+      "private": false,
+      "support_email": "helpdesk@iconnectsolutionspvtltd.freshservice.com",
+      "source": 0,
+      "from_email": "\"Admin Aditya Prerna\" <helpdesk@iconnectsolutionspvtltd.freshservice.com>",
+      "cc_emails": [],
+      "bcc_emails": [],
+      "attachments": [
+        {
+          "id": 27007859253,
+          "created_at": "2022-06-13T11:26:39Z",
+          "updated_at": "2022-06-13T11:26:48Z",
+          "name": "New Project (6).jpg",
+          "attachment_url": "https://iconnectsolutionspvtltd.ind-attachments.freshservice.com/data/helpdesk/attachments/production/27007859253/original/New%20Project%20%286%29.jpg?response-content-type=image/jpeg&Expires=1655206012&Signature=l5GOE9SqmFTpt4--xhsZ7KsTfy456Dfv7eaqQQQYMMMaOYO4jbDOVMjanxo-zR1znqB6U6iczirkgG3FqZW7IBoLOSHOsrccOH8i34LNZH9eDVqhlvwXRkxcBGTSFM3i61zLqVK1536-X0JmQN5P3rrTViIRq94aiXMuhp6~IflOyVRjOZqbPPs05b2hvlrbXbd7XPai2YEg~CuMgKUdjwCxQL7aI0eqKAiBzTSEzUgH1Ka-c-Nv4t5uFzOhpA9WuRMPQSacAWIktod9-rzXw8iSppzPnQLqWc5fI9f5NgqwVdlQ7SsVbBqD5Tx7ogSNB16cPcpx5SggIFKiWQUCVw__&Key-Pair-Id=APKAIPHBXWY2KT5RCMPQ",
+          "content_type": "image/jpeg",
+          "size": 100117,
+          "canonical_url": "https://iconnectsolutionspvtltd.freshservice.com/helpdesk/attachments/27007859253"
+        },
+        {
+          "id": 27007859255,
+          "created_at": "2022-06-13T11:26:47Z",
+          "updated_at": "2022-06-13T11:26:48Z",
+          "name": "New Project (5).jpg",
+          "attachment_url": "https://iconnectsolutionspvtltd.ind-attachments.freshservice.com/data/helpdesk/attachments/production/27007859255/original/New%20Project%20%285%29.jpg?response-content-type=image/jpeg&Expires=1655206012&Signature=ld6fjTpudV7dT3gsD002RR1xjyTPHEe06LBYfTwnXa~CxHA8NxDm2FVZvLuTBjZDH5miRfHLcVPww2IgJTfmszLZucx9MTS1ai5Jf5whC3tlO40jNtAD0HwQCGWZbL6OgYCZsTm4YDRFgWc2p8UKRfA-QD6H1vcpZJrae2pevuhApCqMjr91PwAqDeYjq98ToEfrCJPdFdJplD6TKTOT7dFOA3lsh2DsbXNuZkBVLqlj~O4~4kflPttVUg1FHHvVmsJRdHXFzZC4Hzm0y2y9v4o52KwFpV-myjN-hd8MNXzeK6K~6OO4R7d9l58zUh-jDZ5lEton-ZdP9GifrqmWDQ__&Key-Pair-Id=APKAIPHBXWY2KT5RCMPQ",
+          "content_type": "image/jpeg",
+          "size": 289229,
+          "canonical_url": "https://iconnectsolutionspvtltd.freshservice.com/helpdesk/attachments/27007859255"
+        }
+      ]
+    },
+    {
+      "id": 27010774258,
+      "user_id": 27000620019,
+      "to_emails": ["abc@xyz.com"],
+      "body": "<div style='font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;'>\n<div></div>\n<div>\n<div>Hi Abc,<br><br>Ticket: <a href=\"https://iconnect.adityatawade.com/helpdesk/tickets/292\" rel=\"noreferrer\">https://iconnect.adityatawade.com/helpdesk/tickets/292</a><br>\n</div>\n<br><div><br></div>\n</div>\n</div>",
+      "body_text": "Hi Abc,  Ticket: https://iconnect.adityatawade.com/helpdesk/tickets/292",
+      "ticket_id": 292,
+      "created_at": "2022-06-13T10:30:46Z",
+      "updated_at": "2022-06-13T10:30:46Z",
+      "incoming": false,
+      "private": false,
+      "support_email": "helpdesk@iconnectsolutionspvtltd.freshservice.com",
+      "source": 0,
+      "from_email": "\"Admin Aditya Prerna\" <helpdesk@iconnectsolutionspvtltd.freshservice.com>",
+      "cc_emails": [],
+      "bcc_emails": [],
+      "attachments": []
+    }
+  ],
+  "meta": {
+    "count": 2
+  }
+}
