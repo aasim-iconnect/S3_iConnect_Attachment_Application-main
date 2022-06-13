@@ -9,13 +9,13 @@ const s3 = new AWS.S3({
 });
 
 const fileName = "document.png"; //File Name in Freshservice via API
-const folderName = "001"; //Ticket ID in Freshservice via API
+const folderName = "032"; //Ticket ID in Freshservice via API
 const subFolder = "123456"; //Conversation ID in Freshservice via API
 // const fileURL =
 //   "http://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
 // const fileURL = "https://www.sample-videos.com/img/Sample-jpg-image-15mb.jpeg";
 const fileURL =
-  "https://iconnectsolutionspvtltd.ind-attachments.freshservice.com/data/helpdesk/attachments/production/27007817816/original/Asset2.png?response-content-type=image/png&Expires=1655100770&Signature=F-8unTEP5heFnalJqu9uFeYipEwb6BSTHQEDIwJGCGpru6YBL0a7o0vu-xLG0yBtQBsw~ydhHJdvMr4GdMVmw13yeSd6nmphjmDk5oZVI2BG80BMjhiUE8pD6iQ~466i2r-yWRs8UzOFxAc7Jk9-aqRSp0m1SCTKnk8B2QdfxDedcNsHCwy78DXSWK0NWnucCTAjC2JkNc6XJ2zq~So8i06lSzUym2uzQVimLQJ-xFlFxgABXNWQX0BsJfCAdzoE7u~cuO0LqYCJ943YwKOHWL8DN5hU5u5k-v4u-K54krsrqekeJKAW0QIijW7Tr62~RG1AbosN78LCYgM0GpHXhQ__&Key-Pair-Id=APKAIPHBXWY2KT5RCMPQ";
+  "https://iconnectsolutionspvtltd.ind-attachments.freshservice.com/data/helpdesk/attachments/production/27007817627/original/Asset0.png?response-content-type=image/png&Expires=1655197995&Signature=OecxIv5TohTsezvIOP63ycA5EiXAb8hVbfnOI1LzYdCF7F1KBnYf9SXlKJOdE2ib4wFYX66F7eKp66DanXjEYAFdRozlVwH32ZEF0RuIazdIINPXPNR5wHs4uQ4Z3~Isxjdve76deXd6DP3qoKkEZn-HC1ro72yMMxKnFAOROo5cbpcEWzVwTHIC3ddshgxGujE2akkqJmf6D~L-kQXp8NdjTV2JYLK3Z1VKPlJ0lfZ0l8ibQlX3crtZL-ZOFrE1Ps14KPdLo7Qjcke6kSlpC0ykr1O-iSxY06D5G0fdlfe87IFp9OK2JpP10oGrPV8PvDZQz2LSLA637h1NSwA4Jw__&Key-Pair-Id=APKAIPHBXWY2KT5RCMPQ";
 // File URL via API
 
 var params = {
