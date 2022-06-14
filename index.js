@@ -3,7 +3,18 @@ const AWS = require("aws-sdk");
 const dotenv = require("dotenv");
 const response = require("./response.json");
 const aditya = require("./aditya.json");
+const express = require("express");
+const app = express();
+
+app.use(express.json());
 dotenv.config();
+
+// respond with "hello world" when a GET request is made to the homepage
+const port = 3000;
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 const s3 = new AWS.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY,
@@ -26,6 +37,7 @@ const downloadImage = (url, fileName, uploadFile) => {
 
 const uploadFile = (ticket_id, conversation_id, filename) => {
   // Read content from the file
+  console.log("Uploading file");
   const fileContent = fs.readFileSync(filename);
 
   // Setting up S3 upload parameters
@@ -62,14 +74,49 @@ function name(ticket_id, conversation_id, url, fileName) {
   // }, 20000);
 }
 
-if (false) {
-  const conversations = response.conversations;
+// if (false) {
+//   const conversations = response.conversations;
 
-  conversations.map((conversation) => {
-    const attachmnets = conversation.attachments;
+//   conversations.map((conversation) => {
+//     const attachmnets = conversation.attachments;
+//     const ticket_id = conversation.ticket_id;
+//     const conversation_id = conversation.id;
+//     attachmnets.forEach((attachmnet) => {
+//       name(
+//         ticket_id,
+//         conversation_id,
+//         attachmnet.attachment_url,
+//         attachmnet.name
+//       );
+//     });
+//   });
+// } else {
+//   // const runFile = 0;
+//   aditya.conversation.map((conversation, index) => {
+//     // if (index !== runFile) return;
+//     const attachmnets = conversation.attachments;
+//     const ticket_id = conversation.ticket_id;
+//     const conversation_id = conversation.id;
+//     attachmnets.forEach((attachmnet) => {
+//       name(
+//         ticket_id,
+//         conversation_id,
+//         attachmnet.attachment_url,
+//         attachmnet.name
+//       );
+//     });
+//   });
+// }
+
+app.post("/test", (req, res) => {
+  // console.log("A", typeof req.body);
+  // console.log("BODY 1", req.body.conversation);
+  // console.log("BODY 2", req.body.conversation.conversations);
+  req.body.conversation.conversations.map((conversation) => {
+    const attachments = conversation.attachments;
     const ticket_id = conversation.ticket_id;
     const conversation_id = conversation.id;
-    attachmnets.forEach((attachmnet) => {
+    attachments.forEach((attachmnet) => {
       name(
         ticket_id,
         conversation_id,
@@ -78,20 +125,9 @@ if (false) {
       );
     });
   });
-} else {
-  // const runFile = 0;
-  aditya.conversation.map((conversation, index) => {
-    // if (index !== runFile) return;
-    const attachmnets = conversation.attachments;
-    const ticket_id = conversation.ticket_id;
-    const conversation_id = conversation.id;
-    attachmnets.forEach((attachmnet) => {
-      name(
-        ticket_id,
-        conversation_id,
-        attachmnet.attachment_url,
-        attachmnet.name
-      );
-    });
-  });
-}
+  res.send("File successfully uploaded to s3");
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
