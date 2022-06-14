@@ -4,6 +4,11 @@ Basically we are creating a program where an agent in freshservice will be makin
 
 ## Installation
 
+Download dependencies
+
+```bash
+npm install
+```
 To use the code you need an S3 Bucket & NodeJS server
 
 ```bash
