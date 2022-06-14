@@ -108,7 +108,7 @@ function name(ticket_id, conversation_id, url, fileName) {
 //   });
 // }
 
-app.post("/test", (req, res) => {
+app.post("/s3_upload", (req, res) => {
   // console.log("A", typeof req.body);
   // console.log("BODY 1", req.body.conversation);
   // console.log("BODY 2", req.body.conversation.conversations);
