@@ -7,7 +7,7 @@ Basically we are creating a program where an agent in freshservice will be makin
 Clone the project
 
 ```bash
-  git clone [https://link-to-project](https://github.com/0RutherFord0/S3_iConnect_Attachment_Application-main)
+  git clone https://github.com/0RutherFord0/S3_iConnect_Attachment_Application-main
 ```
 
 Go to the project directory
