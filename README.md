@@ -4,16 +4,29 @@ Basically we are creating a program where an agent in freshservice will be makin
 
 ## Installation
 
-Download dependencies
+Clone the project
 
 ```bash
-npm install
+  git clone [https://link-to-project](https://github.com/0RutherFord0/S3_iConnect_Attachment_Application-main)
 ```
-To use the code you need an S3 Bucket & NodeJS server
+
+Go to the project directory
 
 ```bash
-node index.js
+  cd S3_iConnect_Attachment_Application-main
 ```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  node index.js
+  ```
 
 ## Output
 
