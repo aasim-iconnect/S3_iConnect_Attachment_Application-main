@@ -10,13 +10,18 @@ const s3 = new AWS.S3({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 });
 
-const downloadImage = (url, fileName) => {
+const downloadImage = (url, fileName, uploadFile) => {
   //   const url = fileURL;
 
   const https = require("https");
   const fs = require("fs");
 
-  https.get(url, (resp) => resp.pipe(fs.createWriteStream(fileName)));
+  https
+    .get(url, (resp) => resp.pipe(fs.createWriteStream(fileName)))
+    .on("close", () => {
+      console.log("Downloaded File");
+      uploadFile();
+    });
 };
 
 const uploadFile = (ticket_id, conversation_id, filename) => {
@@ -48,11 +53,13 @@ const uploadFile = (ticket_id, conversation_id, filename) => {
 };
 
 function name(ticket_id, conversation_id, url, fileName) {
-  downloadImage(url, fileName);
-  setTimeout(() => {
-    uploadFile(ticket_id, conversation_id, fileName);
-    console.log("Folder is Created on S3 with Name");
-  }, 20000);
+  downloadImage(url, fileName, () =>
+    uploadFile(ticket_id, conversation_id, fileName)
+  );
+  // setTimeout(() => {
+  //   uploadFile(ticket_id, conversation_id, fileName);
+  //   console.log("Folder is Created on S3 with Name");
+  // }, 20000);
 }
 
 if (false) {
