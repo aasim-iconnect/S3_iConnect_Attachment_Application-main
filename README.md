@@ -2,6 +2,12 @@
 
 Basically we are creating a program where an agent in freshservice will be making a reply in a chat with an attachment. The file will be saved on the S3 bucket with Folder and Sub-Folder & File format.
 
+## Tech Stack
+
+**Client:** S3 Server
+
+**Server:** Node, Express
+
 ## Installation
 
 Clone the project
