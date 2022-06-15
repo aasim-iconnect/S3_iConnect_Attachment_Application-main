@@ -13,7 +13,7 @@ dotenv.config();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Server is Running on Port: nodejs.adityatawade.com");
 });
 
 const s3 = new AWS.S3({
