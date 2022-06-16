@@ -54,8 +54,6 @@ const uploadFile = (ticket_id, conversation_id, filename) => {
     console.log(`File uploaded successfully. ${data.Location}`);
     console.log("Downloaded File Deleted");
   });
-
-  //   const path = fileName;
   try {
     fs.unlinkSync(filename);
     //file removed
@@ -68,50 +66,9 @@ function name(ticket_id, conversation_id, url, fileName) {
   downloadImage(url, fileName, () =>
     uploadFile(ticket_id, conversation_id, fileName)
   );
-  // setTimeout(() => {
-  //   uploadFile(ticket_id, conversation_id, fileName);
-  //   console.log("Folder is Created on S3 with Name");
-  // }, 20000);
 }
 
-// if (false) {
-//   const conversations = response.conversations;
-
-//   conversations.map((conversation) => {
-//     const attachmnets = conversation.attachments;
-//     const ticket_id = conversation.ticket_id;
-//     const conversation_id = conversation.id;
-//     attachmnets.forEach((attachmnet) => {
-//       name(
-//         ticket_id,
-//         conversation_id,
-//         attachmnet.attachment_url,
-//         attachmnet.name
-//       );
-//     });
-//   });
-// } else {
-//   // const runFile = 0;
-//   aditya.conversation.map((conversation, index) => {
-//     // if (index !== runFile) return;
-//     const attachmnets = conversation.attachments;
-//     const ticket_id = conversation.ticket_id;
-//     const conversation_id = conversation.id;
-//     attachmnets.forEach((attachmnet) => {
-//       name(
-//         ticket_id,
-//         conversation_id,
-//         attachmnet.attachment_url,
-//         attachmnet.name
-//       );
-//     });
-//   });
-// }
-
 app.post("/s3_upload", (req, res) => {
-  // console.log("A", typeof req.body);
-  // console.log("BODY 1", req.body.conversation);
-  // console.log("BODY 2", req.body.conversation.conversations);
   req.body.conversation.conversations.map((conversation) => {
     const attachments = conversation.attachments;
     const ticket_id = conversation.ticket_id;
